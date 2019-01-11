@@ -1,0 +1,16 @@
+<div style="margin-left: 420px;"><h3>Dashboard</h3></div> 
+<div>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="selectedProject" class="col-lg-1 control-label" style="font-weight: bold;">Project:</label>
+                <select style=" width: 21%; display: inline; " class="form-control" id="selectedProject" name="selectedProject" (change)="onChange($event.target.value)">
+                    <option *ngFor="let project of projects" value="{{project.projId}}::{{project.projName}}">{{project.projName}}</option>
+                </select>
+              </div>
+        </form>
+</div>
+
+<div class="container">   
+        <div id="container2" style="height:500px;float:left;width:auto;"></div>
+        <div id="container" style=" height:500px;float:left;width:400px;"></div>
+</div>

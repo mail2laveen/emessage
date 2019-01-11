@@ -1,0 +1,65 @@
+<form class="form-horizontal" [formGroup]="task.newTaskForm">
+    <fieldset>
+        <div class="form-group">
+            <label for="taskId" class="col-lg-2 control-label">Task Id</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="taskId" name="taskId" placeholder="Task ID" autofocus formControlName="taskId"
+                    required>
+                <div class="alert alert-danger" *ngIf="task.newTaskForm.controls['taskId'].hasError('required')">
+                    Please Enter TaskId
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="taskName" class="col-lg-2 control-label">Task Name</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="taskName" name="taskName" placeholder="Task Name" formControlName="taskName"
+                    required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="startDate" class="col-lg-2 control-label">Start Date</label>
+            <div class="col-lg-10">
+                <input type="date" class="form-control" id="startDate" name="startDate" formControlName="startDate">
+            </div>
+        </div>
+        <div class="form-group">
+                <label for="endDate" class="col-lg-2 control-label">End Date</label>
+                <div class="col-lg-10">
+                    <input type="date" class="form-control" id="endDate" name="endDate" formControlName="endDate">
+                </div>
+            </div>
+        <div class="form-group">
+            <label for="DEV" class="col-lg-2 control-label">Developer</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="DEV" name="DEV" placeholder="DEV" formControlName="DEV">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="QA" class="col-lg-2 control-label">Tester</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="QA" name="QA" placeholder="QA" formControlName="QA">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="storyId" class="col-lg-2 control-label">Story Id</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="storyId" name="storyId" placeholder="storyId" formControlName="storyId">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="projId" class="col-lg-2 control-label">Project Id</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="projId" name="projId" placeholder="projId" formControlName="projId">
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button type="reset" (click)="goToHome()" class="btn btn-default">Cancel</button>
+                <button type="button" (click)="addNewTask()" class="btn btn-primary" [disabled]="!task.newTaskForm.valid">Add Task</button>
+            </div>
+        </div>
+    </fieldset>
+</form>

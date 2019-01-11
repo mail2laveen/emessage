@@ -1,0 +1,28 @@
+
+<div class="container">
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th>Contact Name</th>
+                <th>Mobile</th>
+                <th>Email</th>
+                <th>Description</th>
+                <th>Group</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let contact of contactList | firstLetter:searchInitail ">
+                <td><span [innerText]="contact.contactName"></span></td>
+                <td><span [innerText]="contact.mobile"></span></td>
+                <td><span [innerText]="contact.email"></span></td>
+                <td><span [innerText]="contact.description"></span></td>
+                <td><span [innerText]="contact.groupId"></span></td>
+                <td>
+                    <button class="btn-success" routerLink="/contacts/{{contact.contactId}}">View</button>
+                    <button class="btn-success" routerLink="/contacts/edit/{{contact.contactId}}">Edit</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

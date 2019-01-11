@@ -1,0 +1,39 @@
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+<div class="container">
+    <div class="">
+        <div class="btn-group">
+            <a href="#" routerLink="/projects" id="list" class="btn btn-default .btn-group-lg">
+                <span class="glyphicon glyphicon-th-list">
+            </span></a>
+            <a href="#" routerLink="/projects/card" id="grid" class="btn btn-default .btn-group-lg">
+                <span class="glyphicon glyphicon-th"></span>
+            </a>
+            <a href="#" routerLink="/projects/new" id="add" class="btn btn-default .btn-group-lg">
+                <span class="glyphicon glyphicon-plus"></span>
+            </a>
+        </div>
+    </div>
+    <table class="table table-hover table-striped" *ngIf="projects.length>0;else noDataTemplate">
+        <thead>
+            <tr>
+                <th>Project Id</th>
+                <th>Project Name</th>
+                <th>Client</th>
+                <th>Logo</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let project of projects | firstLetter:searchInitail ">
+                <td><span [innerText]="project.projId"></span></td>
+                <td><span [innerText]="project.projName"></span></td>
+                <td><span [innerText]="project.client"></span></td>
+                <td>
+                    <img width="40" src="/images/{{project.projName}}.gif" [alt]="project.projName">
+                    <button style="margin-left:20px;" class="btn-success" routerLink="/projects/{{project.projId}}">More Details</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

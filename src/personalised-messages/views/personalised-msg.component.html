@@ -1,0 +1,46 @@
+<div *ngIf="bugDetails">
+        <h1 [innerText]="pageTitle+bugDetails.bugName |uppercase"></h1>
+        <hr>
+<table class="table table-hover table-striped">
+    <tr>
+        <th>Bug Id</th>
+            <td><span [innerText]="bugDetails.bugId"></span></td>
+          </tr>
+    <tr>
+        <th>Bug Name</th>
+        <td><span [innerText]="bugDetails.bugName"></span></td>
+    </tr>
+    <tr>
+        <th>Description</th>
+        <td><span [innerText]="bugDetails.Desc"></span></td>
+    </tr>
+    <tr>
+        <th>Start Date </th>
+        <td><span [innerText]="bugDetails.startDate"></span></td> 
+    </tr>
+    <tr>
+        <th>End Date </th>
+        <td><span [innerText]="bugDetails.endDate"></span></td> 
+    </tr>
+    <tr>
+        <th>Developer </th>
+        <td><img [src]="bugDetails.DEV" ><span [innerText]="bugDetails.DEV"></span></td> 
+    </tr>
+    <tr>
+        <th>Tester </th>
+        <td><img [src]="bugDetails.QA" ><span [innerText]="bugDetails.QA"></span></td> 
+    </tr>
+    <tr>
+        <th>Task</th>
+        <td><span [innerText]="bugDetails.taskId"></span></td>
+    </tr>
+    <tr>
+        <th>Story</th>
+        <td><span [innerText]="bugDetails.storyId"></span></td> 
+    </tr>
+    <tr>
+        <th>Project</th>
+        <td><span [innerText]="bugDetails.projId"></span></td> 
+    </tr>
+</table>
+</div>

@@ -1,0 +1,84 @@
+<form class="form-horizontal" [formGroup]="employee.newEmployeeForm">
+    <fieldset>
+        <div class="form-group">
+            <label for="inputEventId" class="col-lg-2 control-label">Employee Id</label>
+            <div class="col-lg-10">
+                <input type="number" disabled [(ngModel)]="employeeDetails.employeeId" class="form-control" id="inputEmpId" name="inputEmpId" placeholder="Employee ID" autofocus formControlName="employeeId"
+                    required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmployeeName" class="col-lg-2 control-label">Employee Name</label>
+            <div class="col-lg-10">
+                <input type="text" [(ngModel)]="employeeDetails.employeeName" class="form-control" id="inputEmployeeName" name="inputEmployeeName" placeholder="Employee Name" formControlName="employeeName"
+                    required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputAddress" class="col-lg-2 control-label">Address</label>
+            <div class="col-lg-10">
+                <input type="textArea" [(ngModel)]="employeeDetails.address" class="form-control" id="inputAddress" name="inputAddress" placeholder="Address" formControlName="address"
+                    required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputCity" class="col-lg-2 control-label">City</label>
+            <div class="col-lg-10">
+                <input type="text" [(ngModel)]="employeeDetails.city" class="form-control" id="inputCity" name="inputCity" placeholder="City" formControlName="city">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputState" class="col-lg-2 control-label">State</label>
+            <div class="col-lg-10">
+                <input type="text" [(ngModel)]="employeeDetails.state" class="form-control" id="inputState" name="inputState" placeholder="State" formControlName="state">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputCountry" class="col-lg-2 control-label">Country</label>
+            <div class="col-lg-10">
+                <input type="text" [(ngModel)]="employeeDetails.country" class="form-control" id="inputCountry" name="inputCountry" placeholder="Country" formControlName="country">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputPhone" class="col-lg-2 control-label">Phone</label>
+            <div class="col-lg-10">
+                <input type="text" [(ngModel)]="employeeDetails.email" class="form-control" id="inputPhone" name="inputPhone" placeholder="Phone" formControlName="phone">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+            <div class="col-lg-10">
+                <input type="text" [(ngModel)]="employeeDetails.phone" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email" formControlName="email">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputEmployeeJoinDate" class="col-lg-2 control-label">Join Date</label>
+            <div class="col-lg-10">
+                <input type="date" [(ngModel)]="employeeDetails.joinDate" class="form-control" id="inputEmployeeJoinDate" name="inputEmployeeJoinDate" formControlName="joinDate">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputPlatform" class="col-lg-2 control-label">Platform</label>
+            <div class="col-lg-10">
+                <input type="text"  class="form-control" id="inputPlatform" name="inputPlatform" placeholder="Platform" formControlName="platform">
+            </div>
+            </div>
+            <div class="form-group">
+                <label for="inputAvatar" class="col-lg-2 control-label">Avatar</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" id="inputAvatar" name="inputAvatar" placeholder="Avatar" formControlName="avatar">
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <button type="reset" (click)="goToHome()" class="btn btn-default">Cancel</button>
+                    <button type="button" (click)="updateEmployee()" class="btn btn-primary">Update</button>
+                </div>
+            </div>
+    </fieldset>
+</form>

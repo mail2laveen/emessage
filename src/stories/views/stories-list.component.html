@@ -1,0 +1,31 @@
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+<div class="container">
+    <div class="">
+        <div class="btn-group">
+            <a href="#" routerLink="/stories/new" id="add" class="btn btn-default .btn-group-lg">
+                <span class="glyphicon glyphicon-plus"></span>
+            </a>
+        </div>
+    </div>
+    <table class="table table-hover table-striped" *ngIf="stories.length>0;else noDataTemplate">
+        <thead>
+            <tr>
+                <th>Storie Id</th>
+                <th>Storie Name</th>
+                <th>Project Id</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let storie of stories | firstLetter:searchInitail ">
+                <td><span [innerText]="storie.storyId"></span></td>
+                <td><span [innerText]="storie.storyName"></span></td>
+                <td><span [innerText]="storie.projId"></span></td>
+                <td>
+                    <button class="btn-success" routerLink="/stories/{{storie.storyId}}">More Details</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

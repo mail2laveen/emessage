@@ -1,0 +1,24 @@
+<div class="container">
+    <table class="table table-hover table-striped" *ngIf="groupList.length>0;else noDataTemplate">
+        <thead>
+            <tr>
+                <th>Group Name</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let group of groupList | firstLetter:searchInitail ">
+                <td><span [innerText]="group.groupName"></span></td>
+                <td><span [innerText]="group.description"></span></td>
+                <td><span [innerText]="group.status"></span></td>
+                <td>
+                    <button class="btn-success" routerLink="/employees/{{group.groupId}}">View</button>
+                    <button class="btn-success" routerLink="/employees/edit/{{group.groupId}}">Edit</button>
+                    <button class="btn-success" routerLink="/employees/edit/{{group.groupId}}">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

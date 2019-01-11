@@ -1,0 +1,61 @@
+<div >
+        <h1 [innerText]="pageTitle+employeeDetails.employeeName |uppercase"></h1>
+        <hr>
+<table class="table table-hover table-striped">
+    <tr>
+        <th>Employee Id</th>
+            <td><span [innerText]="employeeDetails.employeeId"></span></td>
+          </tr>
+    <tr>
+        <th>Employee Name</th>
+            <td><span [innerText]="employeeDetails.employeeName"></span></td>
+      
+    </tr>
+    <tr>
+        <th>Address</th>
+            <td><span [innerText]="employeeDetails.address"></span></td>
+        
+    </tr>
+    <tr>
+        <th>City</th>
+            <td><span [innerText]="employeeDetails.city"></span></td>
+       
+    </tr>
+    <tr>
+        <th>State</th>
+            <td><span [innerText]="employeeDetails.state"></span></td>
+       
+    </tr>
+    <tr>
+        <th>Country</th>
+            <td><span [innerText]="employeeDetails.country"></span></td>
+      
+    </tr>
+    <tr>
+        <th>Email </th>
+            <td><span [innerText]="employeeDetails.email"></span></td>
+      
+    </tr>
+    <tr>
+        <th> Phone </th>
+            <td><span [innerText]="employeeDetails.phone"></span></td>
+        
+    </tr>
+    <tr>
+        <th>Joining Date </th>
+            <td><span [innerText]="employeeDetails.joinDate"></span></td>
+       
+    </tr>
+    <tr>
+        <th>Platform </th>
+            <td><span [innerText]="employeeDetails.platform"></span></td>
+      
+    </tr>
+    <tr>
+        <th>Avatar</th>
+                    <td>
+                    <img [src]="employeeDetails.avatar" [alt]="employeeDetails.employeeName">
+                </td>
+    </tr>
+</table>
+</div>

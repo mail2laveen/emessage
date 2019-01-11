@@ -1,0 +1,36 @@
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+<div class="container">
+    <div class="">
+        <div class="btn-group">
+            <a href="#" routerLink="/tasks/new" id="add" class="btn btn-default .btn-group-lg">
+                <span class="glyphicon glyphicon-plus"></span>
+            </a>
+        </div>
+    </div>
+    <table class="table table-hover table-striped" *ngIf="tasks.length>0;else noDataTemplate">
+        <thead>
+            <tr>
+                <th>Task Id</th>
+                <th>Task Name</th>
+                <th>Start Date</th>
+                <th>Developer</th>
+                <th>Tester</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let task of tasks | firstLetter:searchInitail ">
+                <td><span [innerText]="task.taskId"></span></td>
+                <td><span [innerText]="task.taskName"></span></td>
+                <td><span [innerText]="task.startDate"></span></td>
+                <td><img src="/images/noimage.png" [alt]="task.DEV"><span [innerText]="task.DEV"></span></td>
+                <td><img src="/images/noimage.png" [alt]="task.QA"><span [innerText]="task.QA"></span></td>
+                <td>
+                    <button class="btn-success" routerLink="/tasks/{{task.taskId}}">More Details</button>
+                    <button class="btn-success" routerLink="/tasks/edit/{{task.taskId}}">Edit</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

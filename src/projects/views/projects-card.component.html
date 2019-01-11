@@ -1,0 +1,28 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+<div class="container">
+    <div class="">
+        <div class="btn-group">
+            <a href="#" routerLink="/projects" id="list" class="btn btn-default .btn-group-lg">
+                <span class="glyphicon glyphicon-th-list">
+            </span></a>
+            <a href="#" routerLink="/projects/card" id="grid" class="btn btn-default .btn-group-lg">
+                <span class="glyphicon glyphicon-th"></span>
+            </a>
+            <a href="#" routerLink="/projects/new" id="add" class="btn btn-default .btn-group-lg">
+                <span class="glyphicon glyphicon-plus"></span>
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <ng-container *ngFor="let project of projects | firstLetter:searchInitail; let i = index" [attr.data-index]="i">
+            <div class="card" style="width: 226px;display: -webkit-inline-box;height: 176px;">
+                <img height="110" width="110" style="float: left; position: absolute; margin-left: 50px; margin-top: 9px; "src="/images/{{project.projName}}.gif" [alt]="project.projName">
+                <div class="card-body" style=" width: 157px; float: left; position: absolute; margin-top: 109px; margin-left: 45px; ">
+                    <span [innerText]="project.projName"></span><br>
+                    <button class="btn-success" routerLink="/projects/{{project.projId}}">More Details</button>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>
